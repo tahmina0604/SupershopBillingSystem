@@ -1,0 +1,33 @@
+for(int i=0;i<c;i++)
+        {
+            data.open("database.txt",ios::in);
+
+        data>>pcode>>pname>>price>>dis;
+        while(!data.eof())
+        {
+            if(pcode==arrc[i])
+            {
+                amount=price*arrq[i];
+                dis=amount-amount*dis/100;
+                total=total+dis;
+                cout<<"\n"<<pcode<<"\t\t"<<pname<<"\t\t"<<arrq[i]<<"\t\t"<<price<<"\t\t"<<amount<<"\t\t"<<dis;
+
+            }
+            data>>pcode>>pname>>price>>dis;
+        }
+        }
+        data.close();
+
+    }
+    cout<<"\n\n____________________________________________________________________";
+    cout<<"\n Total Amount                           : "<<total;
+
+}
+
+int main()
+{
+    shopping s;
+    s.menu();
+
+    return 0;
+}
